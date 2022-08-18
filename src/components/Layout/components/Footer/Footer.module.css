@@ -2,3 +2,19 @@
 	width: 100%;
 	background: #ccc;
 }
+
+.inner {
+	display: flex;
+	justify-content: space-between;
+	padding: 48px 0;
+}
+
+.list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.socials li {
+	font-size: 35px;
+	margin-right: 10px;
+}

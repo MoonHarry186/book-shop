@@ -10,7 +10,10 @@ function Header() {
 	return ( 
 		<header className={cx('wrapper')}>
 			<div className={cx('inner', 'global-inner')}>
-				<Logo />
+				<Logo 
+					width={40}
+					height={40}
+				/>
 				<Search />
 				<CartButton />
 			</div>
