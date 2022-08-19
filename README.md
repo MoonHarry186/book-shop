@@ -1,6 +1,8 @@
 After clone this repository, run:
 
-### `npm react-app-rewired`
+### `npm install react-app-rewired`
+
+For testing
 
 ### `npm test`
 

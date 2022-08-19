@@ -19,6 +19,7 @@ function App() {
                 }
 
                 const Page = route.component
+                
                 return (
                   <Route 
                     key={route.id} 
