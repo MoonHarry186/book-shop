@@ -20,6 +20,12 @@ function Home ({ productCategory }) {
 							nodes {
 								id
 								name
+								image {
+									sourceUrl
+								}
+								... on SimpleProduct {
+									price
+								}
 							}
 						}
 					}
@@ -31,11 +37,15 @@ function Home ({ productCategory }) {
 			})
 	}, [category])
 
+	console.log(products[0]);
+
 	return ( 
 		<div className="products">
 			{products.map((product, index) => (
 				<div key={product.id}>
+					<img src={product.id} alt={product.name} />
 					<h2>{product.name}</h2>
+					<h2>{product.price}</h2>
 				</div>
 			))}
 		</div>
