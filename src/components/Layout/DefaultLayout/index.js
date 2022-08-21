@@ -1,12 +1,16 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer"
+import styles from "./DefaultLayout.module.css"
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles)
 
 function DefaultLayout({children}) {
 	return (
 		<div>
 			<Header />
-			<div className="container">
-				<div className="content">
+			<div className={cx("container")}>
+				<div className={cx("content")}>
 					{children}
 				</div>
 			</div>

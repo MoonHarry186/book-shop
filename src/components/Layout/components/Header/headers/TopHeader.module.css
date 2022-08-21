@@ -1,0 +1,44 @@
+/* Top Header */
+.top-header {
+	background-color: #282828;
+}
+
+.inner {
+	min-height: 44px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.number-phone {
+	font-size: 1.2rem;
+}
+
+.number-phone a {
+	color: #fff;
+	font-weight: 600;
+}
+
+.finding-a-book {
+	text-decoration: underline;
+	margin-right: 33px;
+}
+
+.number:hover,
+.social-media li:hover,
+.finding-a-book:hover {
+	color: var(--primary_hover);
+}
+
+.phone {
+	color: var(--primary);
+	padding-right: 5px;
+}
+
+.social-media li {
+	display: inline-block;
+	color: #fff;
+	margin: 0 8px;
+	font-size: 1.2rem;
+}

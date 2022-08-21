@@ -1,5 +1,9 @@
+import { logo } from '../api/logo';
+
+console.log(logo);
+
 const images = {
-	logo: require('~/assets/images/book-idea-logo-E2E66B24A7-seeklogo.com.png'),
+	logo: require('~/assets/images/logo-1.jpg'),
 	cart: require('~/assets/images/cart-shopping-solid.svg').default,
 	searchIcon: require('~/assets/images/magnifying-glass-solid.svg').default,
 	// Payment methods

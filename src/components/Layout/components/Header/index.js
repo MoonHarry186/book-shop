@@ -1,22 +1,15 @@
 import styles from './Header.module.css';
 import classNames from 'classnames/bind';
-import Logo from '../Logo';
-import Search from '../Search';
-import CartButton from '../Cartbutton';
+import { TopHeader, MainHeader, BottomHeader } from './headers';
 
 const cx = classNames.bind(styles);
 
 function Header() {
 	return ( 
 		<header className={cx('wrapper')}>
-			<div className={cx('inner', 'global-inner')}>
-				<Logo 
-					width={40}
-					height={40}
-				/>
-				<Search />
-				<CartButton />
-			</div>
+			<TopHeader />
+			<MainHeader />
+			<BottomHeader />
 		</header>
 	);
 }

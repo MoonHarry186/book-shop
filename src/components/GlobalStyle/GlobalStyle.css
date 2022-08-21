@@ -1,9 +1,3 @@
-
-
-:root {
-
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -11,13 +5,15 @@
 }
 
 :root {
-	--primary: #fe2c55;
-	--black: #000;
-	--white: #fff;
-	--text-color: #161823;
+	--primary: #F65D4E;
+	--primary_hover: #f4402f;
+	--text: #444444;
+	--accent: #000000;
+	--lighter: #999999;
+	--border: #E6E6E6;
 
-	--font-family: 'ProximaNova', sans-serif;
 
+	--font-family: "Sora", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	--default-layout-header-height: 60px;
 	--default-layout-width: 1150px;
 	--default-layout-horizontal-spacer: 24px;
@@ -37,7 +33,7 @@ body {
 }
 
 .global-inner {
-	max-width: 1150px;
+	max-width: 1290px;
 	margin: auto;
 }
 
@@ -50,6 +46,7 @@ input,
 
 a {
 	text-decoration: none;
+	color: unset;
 }
 
 li {

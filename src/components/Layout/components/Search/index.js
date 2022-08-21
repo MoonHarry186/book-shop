@@ -7,6 +7,9 @@ const cx = classnames.bind(styles);
 function Search() {
 	return ( 
 		<div className={cx('search')}>
+			<select>
+				<option>categories</option>
+			</select>
 			<input className={cx('search-bar')} placeholder="Search books and categories"/>
 			<button className={cx('clear')}>
 				<FontAwesomeIcon icon={faCircleXmark} />
