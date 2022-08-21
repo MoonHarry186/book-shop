@@ -1,0 +1,17 @@
+.bottom-header {
+	min-height: 72px;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+}
+
+.inner li {
+	display: inline-block;
+	margin: 0 32px;
+	font-weight: 600;
+}
+
+.inner li:hover {
+	color: var(--primary_hover);
+	cursor: pointer;
+}

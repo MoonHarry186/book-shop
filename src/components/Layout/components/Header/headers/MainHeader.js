@@ -3,7 +3,6 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './MainHeader.module.css';
 import { Link } from 'react-router-dom';
-import images from '~/assets/images';
 import Search from '../../Search';
 import Cart from './components/Cart';
 import User from './components/User';
@@ -51,7 +50,7 @@ function MainHeader() {
 					<Search />
 
 					<div className={cx('manage')}>
-						<User />
+						<User/>
 
 						<Link to='wishlist'>
 							<FontAwesomeIcon icon={faHeart} />

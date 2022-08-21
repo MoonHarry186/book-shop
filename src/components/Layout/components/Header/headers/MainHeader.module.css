@@ -1,6 +1,6 @@
 .main-header {
 	background-color: #fff;
-	box-shadow: 0px 1px 0px -1px;
+	box-shadow: 0px 1px 0px -0.5px;
 }
 
 .inner {
@@ -9,4 +9,3 @@
 	align-items: center;
 	min-height: 114px;
 }
-
