@@ -9,3 +9,31 @@
 	align-items: center;
 	min-height: 114px;
 }
+
+.manage ul li {
+	display: inline-block;
+	margin-left: 32px;
+	position: relative;
+}
+
+.manage ul li:hover {
+	cursor: pointer;
+	color: var(--primary_hover);
+}
+
+.count {
+		position: absolute;
+    vertical-align: text-top;
+    padding: 1px 3px;
+    border-radius: 5px;
+    line-height: 1;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    top: -4px;
+    right: -8px;
+    letter-spacing: 0;
+    color: #fff;
+    background-color: var(--primary);
+    min-width: 14px;
+}

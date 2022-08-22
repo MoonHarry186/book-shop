@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './MainHeader.module.css';
 import { Link } from 'react-router-dom';
@@ -7,6 +5,7 @@ import Search from '../../Search';
 import Cart from './components/Cart';
 import User from './components/User';
 import { useEffect, useState } from 'react';
+import Wishlist from './components/Wishlist';
 
 const cx = classNames.bind(styles);
 
@@ -50,13 +49,19 @@ function MainHeader() {
 					<Search />
 
 					<div className={cx('manage')}>
-						<User/>
-
-						<Link to='wishlist'>
-							<FontAwesomeIcon icon={faHeart} />
-						</Link>
-
-						<Cart />
+						<ul>
+							<li><User/></li>
+							<li>
+								<Link to='wishlist'>
+									<Wishlist />
+								</Link>
+								<span className={cx('count')}>1</span>
+							</li>
+							<li>
+								<Cart />
+								<span className={cx('count')}>1</span>
+							</li>
+						</ul>
 					</div>
 			</div>
 		</div>

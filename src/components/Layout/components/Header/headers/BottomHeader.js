@@ -1,6 +1,7 @@
 import styles from './BottomHeader.module.css'
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -19,6 +20,7 @@ function BottomHeader() {
 					menu(id: "Primary Menu", idType: NAME) {
 						menuItems {
 							nodes {
+								url
 								id
 								label
 							}
@@ -38,9 +40,13 @@ function BottomHeader() {
 		<div className={cx('bottom-header')}>
 			<div className={cx('inner', 'global-inner')}>
 				<ul>
-					{menus.map((menu, index) => (
-						<li key={menu.id}>{menu.label}</li>
-					))}
+					{menus.map((menu, index) => {
+						const wpurl = `https://72.arrowhitech.net/tn1/harry-moon/wordpress`
+						const onlyPath = menu.url.replace(wpurl, ``)
+						return (
+							<li key={menu.id}><Link to={`${onlyPath}`}>{menu.label}</Link></li>
+						)
+					})}
 				</ul>
 			</div>
 		</div>
