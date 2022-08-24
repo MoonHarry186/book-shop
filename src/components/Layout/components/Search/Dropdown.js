@@ -18,17 +18,10 @@ function Dropdown({data, icon}) {
 							)
 						)
 					}
-					return <li>No results</li>				
 				})}
 			</ul>
 		);
 	}
-	return (
-		<ul className={cx('menu', 'no-result')}>
-			<li>No results</li>
-		</ul>
-	)
-	
 }
 
 export default Dropdown;

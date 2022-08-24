@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import searchSlice from './searchSlice'
+import cartSlice from './cartSlice'
 
 export default configureStore({
   reducer: {
-		search: searchSlice
+		cart: cartSlice
 	},
 })

@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 function App() {
   return (
     <Router>
-      <div>
+      <div className='bookory'>
           <Routes>
               {publicRoutes.map((route, index) => {
                 let Layout = DefaultLayout

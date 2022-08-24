@@ -6,37 +6,18 @@ import Cart from './components/Cart';
 import User from './components/User';
 import { useEffect, useState } from 'react';
 import Wishlist from './components/Wishlist';
+import { logoAPI } from '~/api';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function MainHeader() {
 	
 	const [logo, setLogo] = useState('')
+	const orderNumber = useSelector((state) => state.cart.orderNumber)
 
 	useEffect(() => {
-		fetch('http://72.arrowhitech.net/tn1/harry-moon/wordpress/graphql', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				query: `
-					{
-						mediaItems (where: {title: "logo"}) {
-							edges {
-								node {
-									sourceUrl
-								}
-							}
-						}
-					}
-				`,
-			}),
-		})
-  .then(res => res.json())
-  .then(res => {
-		setLogo(res.data.mediaItems.edges[0].node.sourceUrl)
-	})
+		logoAPI().then(res => setLogo(res))
 	}, [])
 
 	return ( 
@@ -51,16 +32,8 @@ function MainHeader() {
 					<div className={cx('manage')}>
 						<ul>
 							<li><User/></li>
-							<li>
-								<Link to='wishlist'>
-									<Wishlist />
-								</Link>
-								<span className={cx('count')}>1</span>
-							</li>
-							<li>
-								<Cart />
-								<span className={cx('count')}>1</span>
-							</li>
+							<Wishlist />
+							<Cart />
 						</ul>
 					</div>
 			</div>

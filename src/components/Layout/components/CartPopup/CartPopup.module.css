@@ -1,0 +1,63 @@
+.cart-popup {
+	position: fixed;
+	right: 0;
+	width: 340px;
+	background: #fff;
+	height: 100vh;
+	top: 0;
+	transition: transform .25s ease;
+	z-index: 9999;
+	animation: slide .25s ease;
+}
+
+@keyframes slide {
+  from {
+		opacity: 0;
+		right: -340px;
+	}
+  to {
+		opacity: 1;
+		right: 0;
+	}
+}
+
+.popup-header {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding: 15px;
+	border-bottom: 1px solid;
+	border-bottom-color: var(--border);
+}
+
+.cart-popup-title {
+	flex: 1 1 auto;
+	font-size: 18px;
+	color: var(--accent);
+	font-weight: 500;
+}
+
+.close-popup {
+	color: var(--accent);
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: .3px;
+	font-weight: 500;
+	font-size: 13px;
+	padding-right: 18px;
+	position: relative;
+}
+
+.cart-slide-overlay {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 997;
+	background-color: rgba(0,0,0,.7);
+	transition: opacity .25s ease,visibility 0s ease;
+}
