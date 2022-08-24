@@ -1,0 +1,16 @@
+.product {
+    position: relative;
+    width: 330px;
+}
+
+.product-image img{
+    width: 100%;
+}
+
+.group-actions {
+    position: absolute;
+    transition: all ease-in-out .3s;
+    z-index: 5;
+    bottom: 10px;
+    right: 10px;
+}

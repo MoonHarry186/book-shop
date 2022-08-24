@@ -4,7 +4,8 @@ export const cartSlice = createSlice({
 	name: 'cart',
 	initialState: {
 		orderNumber: 10,
-		active: false
+		active: false,
+		products: []
 	},
 	reducers: {
 		// Action
@@ -14,10 +15,15 @@ export const cartSlice = createSlice({
 			} else {
 				state.active = false;
 			}
+		},
+
+		// Update Products List
+		updateProductsList: (state, action) => {
+			state.products = action.payload
 		}
 	}
 })
 
-export const { changeStatus } = cartSlice.actions
+export const { changeStatus, updateProductsList } = cartSlice.actions
 
 export default cartSlice.reducer

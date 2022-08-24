@@ -12,12 +12,19 @@ function CartPopup() {
 	const dispatch = useDispatch()
 	const cartPopupRef = useRef()
 
-
+	const handleClick = () => {
+		setTimeout(() => {
+			dispatch(changeStatus())
+		}, 150)
+	}
+	
 	useEffect(() => {
 		const handleClickOutside = (e) => {
 			if (cartPopupRef.current && !cartPopupRef.current.contains(e.target)) {
 				if (active == true) {
-					dispatch(changeStatus())
+					setTimeout(() => {
+						dispatch(changeStatus())
+					}, 150)
 				}
 			}
 		}
@@ -32,11 +39,11 @@ function CartPopup() {
 
 	return ( 
 		<>
-			<div ref={cartPopupRef} className={active ? cx('cart-popup', 'active') : cx('cart-popup')}>
+			<div ref={cartPopupRef} className={cx('cart-popup')}>
 				<div className={cx('inner')}>
 					<div className={cx('popup-header')}>
 						<span className={cx('cart-popup-title')}>Shoping cart</span>
-						<a onClick={() => dispatch(changeStatus())} href="#" className={cx('close-popup')}>Close</a>
+						<a onClick={() => handleClick()} href="#" className={cx('close-popup')}>Close</a>
 					</div>
 					
 					<div className={cx('cart-popup-body')}>

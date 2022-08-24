@@ -10,6 +10,40 @@ const resquest_init = {
 	
 }
 
+// Products
+export const productsListAPI = async () => {
+	const response = await fetch(base_url, {
+		...resquest_init,
+		body: JSON.stringify({
+			query: `
+				{
+					products {
+					nodes {
+						... on SimpleProduct {
+						productFields {
+							author
+						}
+						id
+						name
+						price
+						regularPrice
+						salePrice
+						image {
+							altText
+							slug
+							sourceUrl
+						}
+						}
+					}
+					}
+				}
+			`
+		})
+	}).then(res => res.json())
+		.then(res => res.data.products.nodes)
+	return response;
+}
+
 // Product Categories
 export const categoriesAPI = async () => {
 	const response = await fetch(base_url, {
