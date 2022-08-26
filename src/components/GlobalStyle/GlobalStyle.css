@@ -52,3 +52,15 @@ a {
 li {
 	list-style: none;
 }
+
+h2 {
+	font-size: 64px;
+	line-height: 72px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
+}

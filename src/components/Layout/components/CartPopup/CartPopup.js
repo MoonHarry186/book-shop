@@ -21,7 +21,7 @@ function CartPopup() {
 	useEffect(() => {
 		const handleClickOutside = (e) => {
 			if (cartPopupRef.current && !cartPopupRef.current.contains(e.target)) {
-				if (active == true) {
+				if (active === true) {
 					setTimeout(() => {
 						dispatch(changeStatus())
 					}, 150)

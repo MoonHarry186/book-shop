@@ -1,28 +1,17 @@
 import styles from "./Product.module.css";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { productsListAPI } from "~/api";
-import { useSelector, useDispatch } from "react-redux";
-import { updateProductsList } from "~/redux/cartSlice";
 import { faHeart, faEye, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { useSelector, useDispatch } from "react-redux";
+import { updateOrderNumber } from "~/redux/cartSlice";
 
 const cx = classNames.bind(styles);
 
-function Product() {
-
-    const products = useSelector(state => state.cart.products)
+function Product({products}) {
+    
+    const orderNumber = useSelector(state => state.cart.orderNumber)
     const dispatch = useDispatch()
-
-
-    useEffect(() => {
-        productsListAPI().then(res => dispatch(updateProductsList(res)))
-    } , [])
-
-    console.log(products);
-
 
     return ( 
         products.map((product, index) => (
@@ -36,7 +25,7 @@ function Product() {
                 <div className={cx('group-actions')}>
                     <div className={cx('shop-actions')}>
                         <div className={cx('add-to-wishlist')}>
-                            <button className={cx('add-to-wishlist-btn')}>
+                            <button className={cx('add-to-wishlist-btn')}>  
                                 <FontAwesomeIcon icon={faHeart} />
                             </button>
                         </div>
@@ -45,7 +34,7 @@ function Product() {
                                 <FontAwesomeIcon icon={faEye} />
                             </button>
                         </div>
-                        <div className={cx('add-to-cart-btn')}>
+                        <div onClick={() => dispatch(updateOrderNumber())} className={cx('add-to-cart-btn')}>
                             <button className={cx('add-to-cart')}>
                                 <FontAwesomeIcon icon={faCartPlus} />
                             </button>

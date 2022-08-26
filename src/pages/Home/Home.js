@@ -1,3 +1,4 @@
+import { Banner } from "./Banner";
 import { BestSalingBooks } from "./BestSalingBooks";
 import styles from "./Home.module.css";
 import classNames from "classnames/bind";
@@ -8,9 +9,8 @@ function Home () {
 		return ( 
 			<div className={cx('home')}>
 				<div className={cx('container')}>
-					<section className={cx('best-saling-session')}>
+						<Banner />
 						<BestSalingBooks />
-					</section>
 				</div>
 			</div>
 		);

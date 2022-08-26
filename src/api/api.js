@@ -115,4 +115,36 @@ export const logoAPI = async () => {
 	return response
 }
 
+// Get Banner Hompage
+export const homePageBannerAPI = async () => {
+	const response = await fetch(base_url, {
+		...resquest_init,
+		body: JSON.stringify({
+			query: `
+				{
+					page( id: "32" , idType: DATABASE_ID) {
+						id
+						databaseId
+						title
+						acf {
+							component {
+									... on Page_Acf_Component_ImageWithText {
+										image {
+											sourceUrl
+										}
+										text
+										imagePosition
+									}
+								}
+						}
+					}
+				}
+			`,
+		}),
+	}).then(res => res.json())
+		.then(res => res.data.page.acf.component[0])
+		
+	return response
+}
+
 

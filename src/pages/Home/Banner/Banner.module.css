@@ -1,0 +1,33 @@
+.banner-section {
+	min-height: 600px;
+	background-color:#fcf1ed;
+	padding: 96px;
+	--space-32: 32px;
+}
+
+.inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.text {
+	text-align: center;
+}
+
+.text p {
+	color: rgb(153, 153, 153);
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	margin-bottom: var(--space-32)
+}
+
+.text h2 {
+	margin-bottom: var(--space-32)
+}
+
+.text h3 {
+	color: rgb(246, 93, 78);
+	margin-bottom: var(--space-32)
+}
